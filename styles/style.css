@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -35,4 +38,267 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+
+/* Visually hidden */
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Левая часть страницы */
+.content {
+  height: 534px;
+  display: flex;
+  align-items: end;
+  gap: 30px;
+}
+
+/* Контейнер главного большого видео */
+.result__video-container {
+  position: relative;
+  width: 711px;
+  margin: 0 0 16px 0;
+}
+
+/* Большое видео */
+.result__video {
+  width: 711px;
+  height: 386px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/************* Строка с кнопками ************/
+.search-form {
+  display: flex;
+  align-self: center;
+  gap: 40px;
+}
+
+.search-form__fieldset {
+  width: 212px;
+  border: none;
+}
+
+.search-form__textfield {
+  appearance: none;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: left;
+  width: 225px;
+  border: white solid 1px;
+  border-width: 1px 0;
+  background-color: #1b1919;
+  color: white;
+}
+
+.search-form__textfield:active {
+  outline: 1px solid white;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__fieldset-title {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: left;
+  margin: 0 0 5px 0;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__label {
+  display: flex;
+  gap: 5px;
+}
+
+/* Making a checkbox */
+.search-form__pseudo-checkbox {
+  color: #1b1919 ;
+  border: 1px solid white;
+  width: 19px;
+  height: 19px;
+  margin: 1.5px 0;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox {
+  background-color: white;
+  outline: 1px solid #1b1919;
+  outline-offset: -2px;
+  border: 1px white solid;
+}
+
+.search-form__label:has(.search-form__pseudo-checkbox):has(:hover) {
+  text-decoration: underline;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+/* Buttons */
+.button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+/* Find Button */
+.search-form__submit-button {
+  position: relative;
+  top: 18px;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  text-align: center;
+  width: 194px;
+  height: 34px;
+  box-sizing: border-box;
+  border: 1px solid white;
+}
+
+/* Buttons effects */
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid white;
+  outline-offset: 1px;
+}
+
+/* More Button */
+.more-button{
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  text-align: center;
+  border: 1px white solid;
+  height: 34px;
+  width: 100%;
+}
+
+/*************** Title *************/
+.title {
+  margin: 0 0 26px 0;
+}
+
+.title,
+.content__accent {
+  font-family: Oswald;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 70.5px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+/* Title accent */
+.content__accent {
+  color: #545050;
+}
+
+/************* Список карточек **************/
+.content__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 298px;
+  overflow-y: auto;
+  padding: 3px;
+}
+
+/* Одна карточка */
+.content__video-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__card-link {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+/* Размеры Заголовка И Описания Карточки */
+.content__video-card-title {
+  font-family: Oswald;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 6px 0 6px 0;
+}
+
+.content__video-card-description {
+  font-family: 'Fira Sans Condensed';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 16.2px;
+  text-align: left;
+}
+
+.content__video-card-description-container {
+  width: 100%;
+}
+
+/* Отступы У Карточек У Всех Кроме Последней */
+.content__list-item:not(:last-child) {
+  margin: 0 0 30px 0;
+}
+
+/* Размеры фото в карточках */
+.content__video-card-thumbnail {
+  width: 194px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Cards effects */
+.content__list-item:hover {
+  text-decoration: underline;
+}
+
+.content__list-item:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.content__list-item:focus-visible {
+  outline: 1px solid white;
+}
+
+/* Прелоадер */
+.preloader {
+  position: relative;
+  z-index: 10;
 }
